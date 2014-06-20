@@ -25,7 +25,7 @@
                 $client_ip = $_SERVER["REMOTE_ADDR"]; //获取用户IP
                 //调用百度哥伦布IP库获得用户城市，http://hetu.baidu.com/api/platform/index?platformId=323
                 $city = convertToCity($client_ip);
-                if($city = $this->value){
+                if($city == $this->value){
                     return ture;
                 }else{
                     return false;

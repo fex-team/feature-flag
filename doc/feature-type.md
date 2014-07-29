@@ -65,6 +65,31 @@
 * 节假日活动专题页：例如6.1儿童节专题页，只需要展现一天
 * 某一功能需要特定时间上线或者下线
 
+## Ua type
+
+* 根据ua判断特定用户
+* value取值，正则表达式字符串。如识别爬虫程序：
+
+ ```javascript
+{
+    "features" : {
+        "featureA" : {
+            "type" : "ua",
+            "value" : "/Baiduspider|Googlebot|iaskspider|spider|YodaoBot|msnbot/i",
+            "desc" : "test ua feature work or not"
+        }
+    }
+}
+
+```javascript
+
+### 使用场景
+
+* 针对爬虫程序做特殊处理屏蔽某功能等
+* 针对某类用户的浏览器、系统等进行识别
+
+
+
 # 自定义feature扩展
 
 * [如何扩展自定义feature](./feature-extends.md)

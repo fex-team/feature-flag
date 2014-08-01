@@ -195,7 +195,10 @@ class DoorKeeper {
 		 */
 		$featureInfo = self::_getFeature($featureName, $smarty);
 		$featureClass = self::initFeature($featureInfo);
-		$featureResult = $featureClass->getFlag();
+		$featureResult = false;
+		if($featureClass){
+			$featureResult = $featureClass->getFlag();
+		}	
 		return $featureResult;
 	}
 

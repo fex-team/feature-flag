@@ -10,7 +10,7 @@ class DoorKeeper {
 	private static $defaultDir = null;
 
 	private static function triggerError($msg){
-		trigger_error(date('Y-m-d H:i:s') . ' ' . $msg, E_USER_ERROR);
+		trigger_error(date('Y-m-d H:i:s') . ' ' . $msg, E_USER_WARNING);
 	}
 
     /**

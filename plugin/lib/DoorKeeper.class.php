@@ -74,8 +74,11 @@ class DoorKeeper {
 	}
 
     private static function decodeJson($file){
-        $result = json_decode(file_get_contents($file), true);
-        switch(json_last_error())
+    	$content = file_get_contents($file);
+        $result = json_decode($content, true);
+
+        //json_last_error php 5.3+才支持
+        /*switch(json_last_error())
         {
             case JSON_ERROR_DEPTH:
                 $error =  ' - Maximum stack depth exceeded';
@@ -92,6 +95,9 @@ class DoorKeeper {
         }
         if (!empty($error)){
             self::triggerError('JSON Error: ' . $error);
+        }*/
+        if(!is_array($result)){
+        	self::triggerError("[Feature Flag] parse json file : ${file} Error! Please check json format.");
         }
         return $result;
     }

@@ -72,7 +72,6 @@
 
 
  ```javascript
-
 {
     "features" : {
         "featureA" : {
@@ -82,9 +81,7 @@
         }
     }
 }
-
 ```
-
 
 ### 使用场景
 
